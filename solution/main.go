@@ -7,7 +7,7 @@ import (
 
 type Grid [][]byte
 
-// Checks if the provided Sudoku puzzle arguments are valid
+// Checks if the provided arguments are valid
 func checkArgs(args []string) bool {
 	if len(args) != 9 {
 		return false
@@ -38,7 +38,7 @@ func (grid Grid) Print() {
 	}
 }
 
-// Checks if placing a number at a specific position in the grid is valid
+// Checks if placing a number at a specific position is valid
 func (grid Grid) isValidPlace(x, y int, num byte) bool {
 	for i := 0; i < 9; i++ {
 		if grid[y][i] == num || grid[i][x] == num || grid[(y/3)*3+i/3][(x/3)*3+i%3] == num {
@@ -48,7 +48,7 @@ func (grid Grid) isValidPlace(x, y int, num byte) bool {
 	return true
 }
 
-// Recursively solves the Sudoku puzzle using backtracking algorithm
+// Recursively solves the Sudoku using backtracking algorithm
 func (grid Grid) backTracking() bool {
 	for y := 0; y < 9; y++ {
 		for x := 0; x < 9; x++ {
@@ -63,7 +63,7 @@ func (grid Grid) backTracking() bool {
 	return true
 }
 
-// Fills an empty cell with a valid number and recursively solves the puzzle
+// Fills an empty cell with a valid number in recursive solving
 func (grid Grid) fillCell(x, y int) bool {
 	for num := byte('1'); num <= '9'; num++ {
 		if grid.isValidPlace(x, y, num) {

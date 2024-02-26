@@ -31,4 +31,5 @@ $ go run . ".96.4...1" "1...6...4" "5.481.39." "..795..43" ".3..8...." "4.5.23.1
 - `Print`: Prints the Sudoku grid with appropriate formatting.
 - `isValidPlace`: Checks if placing a number at a specific position in the grid is valid.
 - `backTracking`: Recursively solves the Sudoku puzzle using backtracking algorithm.
+- `fillCell` : Fills an empty cell with a valid number and recursively solves the puzzle.
 - `solveSudoku`: Creates a Grid from the given puzzle arguments.
